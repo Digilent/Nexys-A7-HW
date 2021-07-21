@@ -79,6 +79,15 @@ module XADCdemo(
     parameter COUNTER_WIDTH = 32;
     reg [COUNTER_WIDTH-1:0] count = {COUNTER_WIDTH{1'b0}};
 
+    
+    //Process for counter that creates a period of 10ms ( f =100MHz /10000000  T = 1/f) until my data is computed
+    always @(posedge(CLK100MHZ))
+    begin
+        if (count == 10000000)
+            count <= {COUNTER_WIDTH{1'b0}};
+        else
+            count <= count + 1'b1;
+    end
 
     //  Xadc instantiation connect the eoc_out .den_in to get continuous conversion. It runs in Continuous Sequence Mode
     //  Unipolar mode is selecte by writing to configuration register 0
@@ -136,14 +145,7 @@ module XADCdemo(
     end
 
 
-    //binary to decimal conversion
-    always @(posedge(CLK100MHZ))
-    begin
-        if (count == 10000000)
-            count <= {COUNTER_WIDTH{1'b0}};
-        else
-            count <= count + 1'b1;
-    end
+   
 
     // Process for data input register
     always @(posedge (CLK100MHZ))
@@ -213,12 +215,12 @@ module XADCdemo(
 
     DigitToSeg segment1(
         .in1(dig0),         // Value of register dig0 that goes to the 1st digit cell of the seven segment display 1
-        .in2(dig1),         // Value of registe dig1 that goes to the 2nd digit cell of the seven segment display 1
-        .in3(dig2),         // Value of registe dig2 that goes to the 3rd digit cell of the seven segment display 1
-        .in4(dig3),         // Value of registe dig3 that goes to the 4th digit cell of the seven segment display 1
-        .in5(dig4),         // Value of registe dig4 that goes to the 1st digit cell of the seven segment display 2
-        .in6(dig5),         // Value of registe dig5 that goes to the 2nd digit cell of the seven segment display 2
-        .in7(dig6),         // Value of registe dig6 that goes to the 3rd digit cell of the seven segment display 2
+        .in2(dig1),         // Value of register dig1 that goes to the 2nd digit cell of the seven segment display 1
+        .in3(dig2),         // Value of register dig2 that goes to the 3rd digit cell of the seven segment display 1
+        .in4(dig3),         // Value of register dig3 that goes to the 4th digit cell of the seven segment display 1
+        .in5(dig4),         // Value of register dig4 that goes to the 1st digit cell of the seven segment display 2
+        .in6(dig5),         // Value of register dig5 that goes to the 2nd digit cell of the seven segment display 2
+        .in7(dig6),         // Value of register dig6 that goes to the 3rd digit cell of the seven segment display 2
         .in8(),
         .mclk(CLK100MHZ),   // System clock of 100Mhz
         .an(an),            // Anode register to select a particular anode
