@@ -81,7 +81,7 @@ module XADCdemo(
     reg [COUNTER_WIDTH-1:0] count = {COUNTER_WIDTH{1'b0}};
 
 
-    //Process for counter that creates a period of 10ms (100MHz /10000000) until my data is computed
+    //Process for counter that creates a period of 10ms ( f =100MHz /10000000  T = 1/f) until my data is computed
     always @(posedge CLK100MHZ)
     begin
         if (count == 10000000)
