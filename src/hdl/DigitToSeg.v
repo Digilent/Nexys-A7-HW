@@ -20,7 +20,8 @@
 //
 `timescale 1ns / 1ps
 
-module DigitToSeg(in1, 
+module DigitToSeg(
+           in1, 
            in2, 
            in3, 
            in4,
@@ -51,9 +52,12 @@ module DigitToSeg(in1,
    wire [3:0] XLXN_102;
    wire [2:0] XLXN_109;
    
-   sevensegdecoder  XLXI_6 (.nIn(XLXN_102[3:0]), 
+   sevensegdecoder  XLXI_6 (
+                           .nIn(XLXN_102[3:0]), 
                            .ssOut(seg[6:0]));
-   mux4_4bus  XLXI_45 (.I0(in1[3:0]), 
+                           
+   mux4_4bus  XLXI_45 (
+                      .I0(in1[3:0]), 
                       .I1(in2[3:0]), 
                       .I2(in3[3:0]), 
                       .I3(in4[3:0]),
@@ -64,15 +68,19 @@ module DigitToSeg(in1,
                       .Sel(XLXN_109[2:0]), 
                       .Y(XLXN_102[3:0]));
                       
-   segClkDevider  XLXI_47 (.clk(mclk), 
+   segClkDivider  XLXI_47 (
+                          .clk(mclk), 
                           .rst(), 
                           .clk_div(XLXN_94));
                           
    //GND  XLXI_48 (.G(swt7));
-   counter3bit  XLXI_49 (.clk(XLXN_94), 
+   counter3bit  XLXI_49 (
+                        .clk(XLXN_94), 
                         .rst(), 
                         .Q(XLXN_109[2:0]));
-   decoder_3_8  XLXI_50 (.I(XLXN_109[2:0]),
+                        
+   decoder_3_8  XLXI_50 (
+                        .I(XLXN_109[2:0]),
                         .dp(dp), 
                         .an(an[7:0]));
                         
