@@ -64,7 +64,7 @@ module DigitToSeg(in1,
                       .Sel(XLXN_109[2:0]), 
                       .Y(XLXN_102[3:0]));
                       
-   segClkDevider  XLXI_47 (.clk(mclk), 
+   segClkDivider  XLXI_47 (.clk(mclk), 
                           .rst(), 
                           .clk_div(XLXN_94));
                           
