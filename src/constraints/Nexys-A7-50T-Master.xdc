@@ -4,8 +4,8 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## Clock signal
-#set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK100MHZ }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
-#create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {CLK100MHZ}];
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS33} [get_ports sys_clock]
+#create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {sys_clock}];
 
 
 ##Switches
@@ -176,8 +176,8 @@
 #set_property -dict { PACKAGE_PIN F5    IOSTANDARD LVCMOS33 } [get_ports { M_LRSEL }]; #IO_0_35 Sch=m_lrsel
 
 #PWM Audio Amplifier
-set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { PWM_AUDIO_0_pwm }]; #IO_L4N_T0_15 Sch=aud_pwm
-set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { PWM_AUDIO_0_en }]; #IO_L6P_T0_15 Sch=aud_sd
+set_property -dict {PACKAGE_PIN A11 IOSTANDARD LVCMOS33} [get_ports PWM_AUDIO_0_pwm]
+set_property -dict {PACKAGE_PIN D12 IOSTANDARD LVCMOS33} [get_ports PWM_AUDIO_0_en]
 
 ##USB-RS232 Interface
 #set_property -dict { PACKAGE_PIN C4    IOSTANDARD LVCMOS33 } [get_ports { UART_TXD_IN }]; #IO_L7P_T1_AD6P_35 Sch=uart_txd_in
@@ -209,3 +209,160 @@ set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { PWM_AU
 #set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { QSPI_DQ[2] }]; #IO_L2P_T0_D02_14 Sch=qspi_dq[2]
 #set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { QSPI_DQ[3] }]; #IO_L2N_T0_D03_14 Sch=qspi_dq[3]
 #set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { QSPI_CSN }]; #IO_L6P_T0_FCS_B_14 Sch=qspi_csn
+
+
+
+
+
+
+
+
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[9]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/count_reg[8]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty[7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[0][7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[1][7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[2][7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/duty_reg[3][7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[7]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[0]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[6]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[14]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[15]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[27]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[16]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[17]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[18]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[26]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[29]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[5]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[11]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[12]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[13]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[19]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[21]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[23]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[3]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[4]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[10]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[25]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[30]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[31]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[1]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[2]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[8]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[9]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[20]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[22]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[24]}]
+set_property MARK_DEBUG true [get_nets {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[28]}]
+set_property MARK_DEBUG true [get_nets design_1_i/fifo2audpwm_0/inst/count0]
+set_property MARK_DEBUG true [get_nets design_1_i/fifo2audpwm_0/inst/fifo_rd_en]
+set_property MARK_DEBUG true [get_nets design_1_i/fifo2audpwm_0/inst/fifo_empty]
+set_property MARK_DEBUG true [get_nets design_1_i/fifo2audpwm_0/inst/aud_pwm]
+set_property MARK_DEBUG true [get_nets design_1_i/fifo2audpwm_0/inst/aud_en]
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 2 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 16384 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list design_1_i/clk_wiz_0/inst/clk_out1]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 8 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {design_1_i/fifo2audpwm_0/inst/duty_reg[3][0]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][1]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][2]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][3]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][4]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][5]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][6]} {design_1_i/fifo2audpwm_0/inst/duty_reg[3][7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 8 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {design_1_i/fifo2audpwm_0/inst/duty_reg[0][0]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][1]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][2]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][3]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][4]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][5]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][6]} {design_1_i/fifo2audpwm_0/inst/duty_reg[0][7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 8 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {design_1_i/fifo2audpwm_0/inst/duty_reg[1][0]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][1]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][2]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][3]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][4]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][5]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][6]} {design_1_i/fifo2audpwm_0/inst/duty_reg[1][7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 8 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {design_1_i/fifo2audpwm_0/inst/duty[0]} {design_1_i/fifo2audpwm_0/inst/duty[1]} {design_1_i/fifo2audpwm_0/inst/duty[2]} {design_1_i/fifo2audpwm_0/inst/duty[3]} {design_1_i/fifo2audpwm_0/inst/duty[4]} {design_1_i/fifo2audpwm_0/inst/duty[5]} {design_1_i/fifo2audpwm_0/inst/duty[6]} {design_1_i/fifo2audpwm_0/inst/duty[7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 32 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[0]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[1]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[2]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[3]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[4]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[5]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[6]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[7]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[8]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[9]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[10]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[11]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[12]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[13]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[14]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[15]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[16]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[17]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[18]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[19]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[20]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[21]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[22]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[23]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[24]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[25]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[26]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[27]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[28]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[29]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[30]} {design_1_i/fifo2audpwm_0/inst/fifo_rd_data[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 8 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {design_1_i/fifo2audpwm_0/inst/duty_reg[2][0]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][1]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][2]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][3]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][4]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][5]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][6]} {design_1_i/fifo2audpwm_0/inst/duty_reg[2][7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 10 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list {design_1_i/fifo2audpwm_0/inst/count_reg[0]} {design_1_i/fifo2audpwm_0/inst/count_reg[1]} {design_1_i/fifo2audpwm_0/inst/count_reg[2]} {design_1_i/fifo2audpwm_0/inst/count_reg[3]} {design_1_i/fifo2audpwm_0/inst/count_reg[4]} {design_1_i/fifo2audpwm_0/inst/count_reg[5]} {design_1_i/fifo2audpwm_0/inst/count_reg[6]} {design_1_i/fifo2audpwm_0/inst/count_reg[7]} {design_1_i/fifo2audpwm_0/inst/count_reg[8]} {design_1_i/fifo2audpwm_0/inst/count_reg[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list design_1_i/fifo2audpwm_0/inst/aud_en]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list design_1_i/fifo2audpwm_0/inst/aud_pwm]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe9]
+set_property port_width 1 [get_debug_ports u_ila_0/probe9]
+connect_debug_port u_ila_0/probe9 [get_nets [list design_1_i/fifo2audpwm_0/inst/count0]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe10]
+set_property port_width 1 [get_debug_ports u_ila_0/probe10]
+connect_debug_port u_ila_0/probe10 [get_nets [list design_1_i/fifo2audpwm_0/inst/fifo_empty]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe11]
+set_property port_width 1 [get_debug_ports u_ila_0/probe11]
+connect_debug_port u_ila_0/probe11 [get_nets [list design_1_i/fifo2audpwm_0/inst/fifo_rd_en]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets u_ila_0_clk_out1]
