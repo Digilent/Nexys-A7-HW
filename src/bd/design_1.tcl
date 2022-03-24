@@ -166,7 +166,7 @@ if { $bCheckIPsPassed != 1 } {
 # MIG PRJ FILE TCL PROCs
 ##################################################################
 
-proc write_mig_file_design_1_mig_7series_0_1 { str_mig_prj_filepath } {
+proc write_mig_file_design_1_mig_7series_0_0 { str_mig_prj_filepath } {
 
    file mkdir [ file dirname "$str_mig_prj_filepath" ]
    set mig_prj_file [open $str_mig_prj_filepath  w+]
@@ -306,7 +306,7 @@ proc write_mig_file_design_1_mig_7series_0_1 { str_mig_prj_filepath } {
 
    close $mig_prj_file
 }
-# End of write_mig_file_design_1_mig_7series_0_1()
+# End of write_mig_file_design_1_mig_7series_0_0()
 
 
 
@@ -578,7 +578,7 @@ proc create_root_design { parentCell } {
   set str_mig_file_name mig_b.prj
   set str_mig_file_path ${str_mig_folder}/${str_mig_file_name}
 
-  write_mig_file_design_1_mig_7series_0_1 $str_mig_file_path
+  write_mig_file_design_1_mig_7series_0_0 $str_mig_file_path
 
   set_property -dict [ list \
    CONFIG.BOARD_MIG_PARAM {ddr2_sdram} \
