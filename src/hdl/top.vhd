@@ -137,25 +137,23 @@ constant TMR_VAL_MAX : std_logic_vector(3 downto 0) := "1001"; --9
 
 constant RESET_CNTR_MAX : std_logic_vector(17 downto 0) := "110000110101000000";-- 100,000,000 * 0.002 = 200,000 = clk cycles per 2 ms
 
-constant MAX_STR_LEN : integer := 31;
+constant MAX_STR_LEN : integer := 29;
 
-constant WELCOME_STR_LEN : natural := 31;
+constant WELCOME_STR_LEN : natural := 29;
 constant BTN_STR_LEN : natural := 24;
 
 --Welcome string definition. Note that the values stored at each index
 --are the ASCII values of the indicated character.
-constant WELCOME_STR : CHAR_ARRAY(0 to 30) := (X"0A",  --\n
+constant WELCOME_STR : CHAR_ARRAY(0 to 28) := (X"0A",  --\n
 															  X"0D",  --\r
 															  X"4E",  --N
 															  X"45",  --E
 															  X"58",  --X
 															  X"59",  --Y
 															  X"53",  --S
-															  X"34",  --4
 															  X"20",  -- 
-															  X"44",  --D
-															  X"44",  --D
-															  X"52",  --R
+															  X"41",  --A
+															  X"37",  --7
 															  X"20",  -- 
 															  X"47",  --G
 															  X"50",  --P
